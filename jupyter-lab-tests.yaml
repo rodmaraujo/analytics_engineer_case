@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  jupyter:
+    image: jupyter/base-notebook:latest
+    container_name: jupyter_notebook
+    environment:
+      JUPYTER_TOKEN: "loadsmartlab123"
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    networks:
+      - dbt_net
+
+networks:
+  dbt_net:
+    external: true
