@@ -50,16 +50,26 @@ STEPS:
 
 ----TASKs 1.a, 2.a.i of PDF case----
 
+***Incremental Ingestion: If the raw tabela does not exists in PostgreSQL or if the CSV file date modified > raw ingestion_date field(I create this field in the scripts)
+
 [Raw Ingestion]   https://github.com/rodmaraujo/analytics_engineer_case/blob/main/python_isolated_case_functions/1_source_to_postgresql_with_ingestion_date.py
+
+<img width="1304" height="143" alt="Image" src="https://github.com/user-attachments/assets/1c2831d7-c95e-45c7-8d83-dfaf64e5410c" />
+
 
 [Raw Tabela validate on Postgresql] https://github.com/rodmaraujo/analytics_engineer_case/blob/main/python_isolated_case_functions/2_loadsmart_raw_table_validate.py
 
 
 ----TASK 2.a.ii, 2.a.iii, 2.b of PDF case----
 
+*** Export the files in the sFTP every Dagster Daily Trigger
+
 [Analysis Exports to sFTP and Email] https://github.com/rodmaraujo/analytics_engineer_case/blob/main/python_isolated_case_functions/3_export_reports_sftp_email.py
 
 (Last script test! After the full Data Modeling Layers was built)
+
+<img width="1485" height="215" alt="Image" src="https://github.com/user-attachments/assets/8ad5221b-2e0a-4da2-b1c5-1195ebd6f71f" />
+
 
 ----------------------------------------------------------------------
 
