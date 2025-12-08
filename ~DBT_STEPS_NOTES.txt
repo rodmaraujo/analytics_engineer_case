@@ -1,51 +1,51 @@
-##Note: On Dbeaver or another Windows Tool you need to connect on my PostgreSQL via 5454(external) port
-
-mkdir -p /home/rma/.dbt
-cp /mnt/e/case_analytics_engineer/dbt_project/your_dbt_project/profiles/profiles.yml ~/.dbt/profiles.yml
 
 
-
-# 1) ensure you're in the project folder where the 3 files were created (in my PC I used E: disk)
-cd /mnt/e/case_analytics_engineer/dbt_project
-
-pip install dbt-postgres
-pip install dbt-postgres==1.9.0b1
-
-pip install dbt-core
-
-# 2) create structure and files on host
-./create_dbt_structure.sh
-
-# 3) (optional) inspect the profiles file to confirm port line is int-friendly
-sed -n '1,120p' profiles/profiles.yml
+# Using DBT + WSL2 (22 is my version) + postgresql docker desktop container
 
 
-# 4) build the dbt image (no cache recommended first time)
-docker compose -f docker-compose.dbt.yaml build --no-cache
+# Navigate to your prefered folder (my example):
+cd /mnt/e/case_analytics_engineer
+
+# create a project
+mkdir dbt_project
+
+cd dbt_project  # !!!!!!!!
 
 
-# 5) bring up the service (attached to your external network dbt_net)
-docker compose -f docker-compose.dbt.yaml up -d
+# Python isolated enviroment
+sudo apt update
+sudo apt install python3-venv
 
-# 6) check container
-docker ps --filter "name=dbt_runner"
+python3 -m venv venv
 
-# 7) exec into the container
-docker exec -it dbt_runner bash
-
-# 8) inside container: run dbt debug
-dbt debug
-
-# 9) test running the sample model (if dbt debug connection passes)
-dbt run --select hello_world
+source venv/bin/activate 
+                            or deactivate
 
 
------MACRO TESTS:
+# Pip + dbt-core + dbt-postgres
+pip install --upgrade pip setuptools wheel
 
---LIST LOADSMART TABLES:
- dbt run-operation list_loadsmart_tables
+pip install dbt-postgres    
 
---PREVIEW TABLE RESULTS:
- dbt run-operation preview_table --args '{"table": "\"2025_data_challenge_ae\"", "limit": 20}'
- 
---
+#DBT init configs:
+
+dbt init .
+
+# Name your project: 	    "name" + <enter>
+# Profile name	            "dbt_postgres"
+# Which database adapter?	"postgres"
+#Host	                    "localhost"         #in my case
+#Port	                    5454                #in my case
+#Database	                "dbt_database"      #in my case
+#Username	                "dbt_user"          #in my case
+#Password	                "dbt_password"      #in my case 
+#Schema	                    "loadsmart"         #my default schema
+
+
+# packages.yml
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.3.0
+
+dbt deps
+
