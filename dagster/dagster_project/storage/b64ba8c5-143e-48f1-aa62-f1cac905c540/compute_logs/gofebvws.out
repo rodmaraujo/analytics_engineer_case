@@ -1,0 +1,22 @@
+Running with dbt=1.10.15
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 5
+    ------------------------------
+    2  |   outputs:
+    3  |     dev:
+    4  |       dbname: dbt_database
+    5  |       host: host: host.docker.internal
+    6  |       pass: dbt_password
+    7  |       port: 5432
+    8  |       schema: public
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 5, column 17
+  

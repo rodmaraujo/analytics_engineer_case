@@ -1,0 +1,24 @@
+2025-12-08 02:06:07 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - 45 - LOGS_CAPTURED - Started capturing logs in process (pid: 45).
+2025-12-08 02:06:07 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - 45 - run_dbt_models - STEP_START - Started execution of step "run_dbt_models".
+2025-12-08 02:06:07 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - run_dbt_models - 🚀 Executing dbt...
+2025-12-08 02:06:10 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - run_dbt_models - Copying `/opt/dagster/app/dbt/target/partial_parse.msgpack` to `/opt/dagster/app/dbt/target/c9845e3/partial_parse.msgpack` to take advantage of partial parsing.
+2025-12-08 02:06:10 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - run_dbt_models - Running dbt command: `dbt run`.
+2025-12-08 02:06:15 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - run_dbt_models - Finished dbt command: `dbt run`.
+2025-12-08 02:06:15 +0000 - dagster - ERROR - pipeline_ingest_then_dbt - 2d5541bc-f7d7-4b6e-a1a4-fb64c665587a - 45 - run_dbt_models - STEP_FAILURE - Execution of step "run_dbt_models" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_dbt_models"::
+
+AttributeError: 'DbtCliInvocation' object has no attribute 'return_code'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/ops/run_dbt.py", line 12, in run_dbt_models
+    if result.return_code != 0:
+

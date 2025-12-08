@@ -1,0 +1,38 @@
+Running with dbt=1.10.15
+Registered adapter: postgres=1.9.1
+Unable to do partial parsing because profile has changed
+Found 11 models, 1 operation, 1 source, 577 macros
+
+Concurrency: 4 threads (target='dev')
+
+1 of 1 START hook: dbt_project.on-run-start.0 .................................. [RUN]
+1 of 1 OK hook: dbt_project.on-run-start.0 ..................................... [[32mOK[0m in 0.02s]
+
+1 of 11 START sql incremental model loadsmart_dim.dim_carrier .................. [RUN]
+2 of 11 START sql incremental model loadsmart_dim.dim_delivery_location ........ [RUN]
+3 of 11 START sql incremental model loadsmart_dim.dim_pickup_location .......... [RUN]
+4 of 11 START sql incremental model loadsmart_dim.dim_shipper .................. [RUN]
+4 of 11 OK created sql incremental model loadsmart_dim.dim_shipper ............. [[32mINSERT 0 0[0m in 0.36s]
+1 of 11 OK created sql incremental model loadsmart_dim.dim_carrier ............. [[32mINSERT 0 0[0m in 0.37s]
+2 of 11 OK created sql incremental model loadsmart_dim.dim_delivery_location ... [[32mINSERT 0 0[0m in 0.37s]
+3 of 11 OK created sql incremental model loadsmart_dim.dim_pickup_location ..... [[32mINSERT 0 0[0m in 0.37s]
+5 of 11 START sql incremental model loadsmart_dim.dim_sourcing_channel ......... [RUN]
+6 of 11 START sql table model loadsmart_reports.loadsmart_id_lastmonth_report .. [RUN]
+7 of 11 START sql table model public.test_query ................................ [RUN]
+7 of 11 OK created sql table model public.test_query ........................... [[32mSELECT 20[0m in 0.15s]
+6 of 11 OK created sql table model loadsmart_reports.loadsmart_id_lastmonth_report  [[32mSELECT 307[0m in 0.16s]
+5 of 11 OK created sql incremental model loadsmart_dim.dim_sourcing_channel .... [[32mINSERT 0 0[0m in 0.17s]
+8 of 11 START sql incremental model loadsmart_fact.fact_loadsmart_load ......... [RUN]
+8 of 11 OK created sql incremental model loadsmart_fact.fact_loadsmart_load .... [[32mINSERT 0 0[0m in 0.10s]
+9 of 11 START sql table model loadsmart_anl.anl_carrier ........................ [RUN]
+10 of 11 START sql table model loadsmart_anl.anl_delivery_location ............. [RUN]
+11 of 11 START sql table model loadsmart_anl.anl_pickup_location ............... [RUN]
+9 of 11 OK created sql table model loadsmart_anl.anl_carrier ................... [[32mSELECT 4496[0m in 0.15s]
+11 of 11 OK created sql table model loadsmart_anl.anl_pickup_location .......... [[32mSELECT 3584[0m in 0.15s]
+10 of 11 OK created sql table model loadsmart_anl.anl_delivery_location ........ [[32mSELECT 3660[0m in 0.15s]
+
+Finished running 6 incremental models, 1 project hook, 5 table models in 0 hours 0 minutes and 1.07 seconds (1.07s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12

@@ -1,0 +1,8 @@
+2025-12-08 02:10:44 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - 45 - LOGS_CAPTURED - Started capturing logs in process (pid: 45).
+2025-12-08 02:10:44 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - 45 - execute_ingestion_script - STEP_START - Started execution of step "execute_ingestion_script".
+2025-12-08 02:10:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - execute_ingestion_script - Running script: /opt/dagster/app/scripts/1_source_to_postgresql_with_ingestion_date.py
+2025-12-08 02:10:49 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - execute_ingestion_script - Ingestion completed.
+2025-12-08 02:10:49 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - 45 - execute_ingestion_script - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-12-08 02:10:49 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - execute_ingestion_script - Writing file at: /opt/dagster/app/storage/90afffa8-ada1-4356-94e2-5261b3a0ff4e/execute_ingestion_script/result using PickledObjectFilesystemIOManager...
+2025-12-08 02:10:49 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - 45 - execute_ingestion_script - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-12-08 02:10:49 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 90afffa8-ada1-4356-94e2-5261b3a0ff4e - 45 - execute_ingestion_script - STEP_SUCCESS - Finished execution of step "execute_ingestion_script" in 4.63s.

@@ -1,0 +1,144 @@
+2025-12-08 01:57:14 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - 93 - LOGS_CAPTURED - Started capturing logs in process (pid: 93).
+2025-12-08 01:57:14 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - 93 - run_dbt_models - STEP_START - Started execution of step "run_dbt_models".
+2025-12-08 01:57:14 +0000 - dagster - INFO - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - run_dbt_models - 🚀 Executing dbt...
+2025-12-08 01:57:16 +0000 - dagster - WARNING - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - run_dbt_models - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dbt/clients/yaml_helper.py", line 61, in load_yaml_text
+    return yaml.load(contents, loader)
+  File "/usr/local/lib/python3.10/site-packages/yaml/__init__.py", line 81, in load
+    return loader.get_single_data()
+  File "/usr/local/lib/python3.10/site-packages/yaml/constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+  File "yaml/_yaml.pyx", line 674, in yaml._yaml.CParser.get_single_node
+  File "yaml/_yaml.pyx", line 688, in yaml._yaml.CParser._compose_document
+  File "yaml/_yaml.pyx", line 732, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 846, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 732, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 846, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 732, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 846, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 732, in yaml._yaml.CParser._compose_node
+  File "yaml/_yaml.pyx", line 848, in yaml._yaml.CParser._compose_mapping_node
+  File "yaml/_yaml.pyx", line 861, in yaml._yaml.CParser._parse_next_event
+yaml.scanner.ScannerError: mapping values are not allowed in this context
+  in "<unicode string>", line 5, column 17
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dbt/config/profile.py", line 40, in read_profile
+    yaml_content = load_yaml_text(contents)
+  File "/usr/local/lib/python3.10/site-packages/dbt/clients/yaml_helper.py", line 68, in load_yaml_text
+    raise dbt_common.exceptions.base.DbtValidationError(error)
+dbt_common.exceptions.base.DbtValidationError: Runtime Error
+  Syntax error near line 5
+  ------------------------------
+  2  |   outputs:
+  3  |     dev:
+  4  |       dbname: dbt_database
+  5  |       host: host: host.docker.internal
+  6  |       pass: dbt_password
+  7  |       port: 5432
+  8  |       schema: public
+  
+  Raw Error:
+  ------------------------------
+  mapping values are not allowed in this context
+    in "<unicode string>", line 5, column 17
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/resource.py", line 700, in cli
+    adapter = self._initialize_dbt_core_adapter(args)
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/resource.py", line 381, in _initialize_dbt_core_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+  File "/usr/local/lib/python3.10/site-packages/dbt/config/runtime.py", line 78, in load_profile
+    profile = Profile.render(
+  File "/usr/local/lib/python3.10/site-packages/dbt/config/profile.py", line 400, in render
+    raw_profiles = read_profile(flags.PROFILES_DIR)
+  File "/usr/local/lib/python3.10/site-packages/dbt/config/profile.py", line 47, in read_profile
+    raise DbtValidationError(msg) from e
+dbt_common.exceptions.base.DbtValidationError: Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 5
+    ------------------------------
+    2  |   outputs:
+    3  |     dev:
+    4  |       dbname: dbt_database
+    5  |       host: host: host.docker.internal
+    6  |       pass: dbt_password
+    7  |       port: 5432
+    8  |       schema: public
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 5, column 17
+  
+2025-12-08 01:57:16 +0000 - dagster - INFO - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - run_dbt_models - Copying `/opt/dagster/app/dbt/target/partial_parse.msgpack` to `/opt/dagster/app/dbt/target/ed2a9e2/partial_parse.msgpack` to take advantage of partial parsing.
+2025-12-08 01:57:16 +0000 - dagster - INFO - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - run_dbt_models - Running dbt command: `dbt run`.
+2025-12-08 01:57:18 +0000 - dagster - INFO - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - run_dbt_models - Finished dbt command: `dbt run`.
+2025-12-08 01:57:18 +0000 - dagster - ERROR - pipeline_ingest_then_dbt - b64ba8c5-143e-48f1-aa62-f1cac905c540 - 93 - run_dbt_models - STEP_FAILURE - Execution of step "run_dbt_models" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process with command
+
+`dbt run`
+
+failed with exit code `2`. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: /opt/dagster/app/dbt/target/ed2a9e2/dbt.log.
+
+Errors parsed from dbt logs:
+
+Encountered an error:
+Runtime Error
+  
+  dbt encountered an error while trying to read your profiles.yml file.
+  
+  Runtime Error
+    Syntax error near line 5
+    ------------------------------
+    2  |   outputs:
+    3  |     dev:
+    4  |       dbname: dbt_database
+    5  |       host: host: host.docker.internal
+    6  |       pass: dbt_password
+    7  |       port: 5432
+    8  |       schema: public
+    
+    Raw Error:
+    ------------------------------
+    mapping values are not allowed in this context
+      in "<unicode string>", line 5, column 17
+  
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_plan.py", line 247, in dagster_event_sequence_for_step
+    yield from check.generator(step_events)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 504, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/execute_step.py", line 88, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 188, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute.py", line 157, in _yield_compute_results
+    for event in iterate_with_context(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/ops/run_dbt.py", line 10, in run_dbt_models
+    result = dbt.cli(["run"]).wait()
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 218, in wait
+    list(self.stream_raw_events())
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 381, in stream_raw_events
+    self._raise_on_error()
+  File "/usr/local/lib/python3.10/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 474, in _raise_on_error
+    raise error
+

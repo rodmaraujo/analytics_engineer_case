@@ -1,0 +1,21 @@
+2025-12-08 12:24:43 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - LOGS_CAPTURED - Started capturing logs in process (pid: 2867).
+2025-12-08 12:24:43 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - export_reports_sftp - STEP_START - Started execution of step "export_reports_sftp".
+2025-12-08 12:24:43 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Loading file from: /opt/dagster/app/storage/1d95d2f8-2386-4299-be3e-cd9316d637bc/run_dbt_models/result using PickledObjectFilesystemIOManager...
+2025-12-08 12:24:43 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - export_reports_sftp - LOADED_INPUT - Loaded input "upstream" using input manager "io_manager", from output "result" of step "run_dbt_models"
+2025-12-08 12:24:43 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - export_reports_sftp - STEP_INPUT - Got input "upstream" of type "Any". (Type check passed).
+2025-12-08 12:24:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Starting report export process. Upstream message: DBT_DONE
+2025-12-08 12:24:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Connecting to SFTP server...
+2025-12-08 12:24:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Connected to SFTP.
+2025-12-08 12:24:48 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Exporting table: loadsmart_reports.loadsmart_id_lastmonth_report
+2025-12-08 12:24:48 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Uploading file to SFTP: loadsmart_id_lastmonth_report_20251208.csv
+2025-12-08 12:24:49 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Exporting table: loadsmart_anl.anl_carrier
+2025-12-08 12:24:49 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Uploading file to SFTP: anl_carrier_20251208.csv
+2025-12-08 12:24:50 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Exporting table: loadsmart_anl.anl_pickup_location
+2025-12-08 12:24:50 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Uploading file to SFTP: anl_pickup_location_20251208.csv
+2025-12-08 12:24:51 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Exporting table: loadsmart_anl.anl_delivery_location
+2025-12-08 12:24:51 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Uploading file to SFTP: anl_delivery_location_20251208.csv
+2025-12-08 12:24:52 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - All reports exported successfully.
+2025-12-08 12:24:52 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - export_reports_sftp - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-12-08 12:24:52 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - export_reports_sftp - Writing file at: /opt/dagster/app/storage/1d95d2f8-2386-4299-be3e-cd9316d637bc/export_reports_sftp/result using PickledObjectFilesystemIOManager...
+2025-12-08 12:24:52 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - export_reports_sftp - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-12-08 12:24:52 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 1d95d2f8-2386-4299-be3e-cd9316d637bc - 2867 - export_reports_sftp - STEP_SUCCESS - Finished execution of step "export_reports_sftp" in 9.52s.
