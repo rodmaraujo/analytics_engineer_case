@@ -1,6 +1,6 @@
 # analytics_engineer_case
 This Repo Contains a full analytics engineer pipeline for study.
-https://github.com/rodmaraujo/analytics_engineer_case/blob/main/DENB_Challenge_AE_2025.pdf
+The Challenge: https://github.com/rodmaraujo/analytics_engineer_case/blob/main/DENB_Challenge_AE_2025.pdf
 
 
 My Stack in this Project is:
