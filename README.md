@@ -5,7 +5,7 @@ This Repo Contains a full analytics engineer pipeline for study.
 The Challenge: https://github.com/rodmaraujo/analytics_engineer_case/blob/main/DENB_Challenge_AE_2025.pdf
 
 
-My Stack in this Project is:
+### My Stack in this Project is:
 - Docker (For environment)
   - Jupyter container (For python debug tests)
   - PostgreSQL container (DB for data modeling layers)
@@ -16,7 +16,7 @@ My Stack in this Project is:
 - Power BI Desktop (Dataviz)
 - ftpGrid (free FTP tests)
 
-Base Containers I used:
+### Base Containers I used:
 
 <img width="572" height="379" alt="Image" src="https://github.com/user-attachments/assets/8b1526f5-24ea-420e-9e6f-edba4bf67980" />
 
@@ -27,12 +27,12 @@ Full Arch I developed:
 
 
 
-STEPS:
+# STEPS:
 ----------------------------------------------------------------------
 
 ###################################
 
-1) Building my containers:
+### 1) Building my containers:
    
 ###################################
 
@@ -48,11 +48,11 @@ STEPS:
 
 ###################################
 
-2) Doing Python tests:
+### 2) Doing Python tests:
    
 ###################################
 
-----TASKs 1.a, 2.a.i of PDF case----
+#### ----TASKs 1.a, 2.a.i of PDF case----
 
 ***Incremental Ingestion: If the raw tabela does not exists in PostgreSQL or if the CSV file date modified > raw ingestion_date field(I create this field in the scripts)
 
@@ -68,7 +68,7 @@ STEPS:
 
 
 
-----TASK 2.a.ii, 2.a.iii, 2.b of PDF case----
+#### ----TASK 2.a.ii, 2.a.iii, 2.b of PDF case----
 
 *** Export the files in the sFTP every Dagster Daily Trigger
 
@@ -83,13 +83,13 @@ STEPS:
 
 ###################################
 
-3) Building Data Modeling Layers:
+### 3) Building Data Modeling Layers:
    
 ###################################
 
-----TASKs 1.a, 2.b of PDF case----
+#### ----TASKs 1.a, 2.b of PDF case----
 
-[ Type 1: Pure SQL on PostgreSQL + Dbeaver ]  https://github.com/rodmaraujo/analytics_engineer_case/blob/main/Dimensional_Model_Script.sql
+#### [ Type 1: Pure SQL on PostgreSQL + Dbeaver ]  https://github.com/rodmaraujo/analytics_engineer_case/blob/main/Dimensional_Model_Script.sql
 
 - You can just execute this full script on Dbeaver + PostgreSQL container connection and all layers will be created:
   
@@ -120,7 +120,7 @@ STEPS:
     loadsmart_reports.loadsmart_id_lastmonth_report
 
 
-[ Type 2: DBT Models ]  
+#### [ Type 2: DBT Models ]  
 
 If you prefer, drop all  modeling tables and just execute my DBT models:
 
@@ -134,11 +134,11 @@ Reports Models: https://github.com/rodmaraujo/analytics_engineer_case/tree/main/
 
 You can just run "dbt build" on your dbt bash to build the complete Data Modeling.
 
-Project Example: 
+##### Project Example: 
 
 <img width="298" height="627" alt="Image" src="https://github.com/user-attachments/assets/7f6a90a5-60ef-4e90-aabf-ef0e4061b584" />
 
-Dimensional Modeling DBT lineage:
+##### Dimensional Modeling DBT lineage:
 
 <img width="1782" height="786" alt="Image" src="https://github.com/user-attachments/assets/3d436de2-60e5-4617-814c-11ac193e9d70" />
 
@@ -146,7 +146,7 @@ Dimensional Modeling DBT lineage:
 
 ###################################
 
-4) The Dataviz Examples:
+### 4) The Dataviz Examples:
    
 ###################################
 
@@ -167,7 +167,7 @@ My Superset dashboard testing the Data Models:
 
 ###################################
 
-4) Orchestrating with Dagster:
+### 4) Orchestrating with Dagster:
    
 ###################################
 
@@ -189,4 +189,4 @@ b) The Contract Schedule is Daily:7UTC
 
 ----------------
 
-Hey! I hope you enjoyed my Analytics Engineer case! See ya!
+#### Hey! I hope you enjoyed my Analytics Engineer case! See ya!
