@@ -2,7 +2,7 @@
 This Repo Contains a full analytics engineer pipeline for study.
 
 My Stack in this Project is:
-- Docker (For enviroment)
+- Docker (For environment)
   - Jupyter container (For python debug tests)
   - PostgreSQL container (DB for data modeling layers)
   - Superset Container (Dataviz)
