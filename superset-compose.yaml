@@ -1,0 +1,41 @@
+services:
+  superset:
+    image: apache/superset:3.0.0-py310
+    container_name: superset_app
+    restart: unless-stopped
+    ports:
+      - "8088:8088"
+    environment:
+      SUPERSET_SECRET_KEY: "1234"
+      
+      SUPERSET_ADMIN_USERNAME: admin
+      SUPERSET_ADMIN_FIRSTNAME: Superset
+      SUPERSET_ADMIN_LASTNAME: Admin
+      SUPERSET_ADMIN_EMAIL: admin@example.com
+      SUPERSET_ADMIN_PASSWORD: admin
+
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        superset db upgrade &&
+        superset fab create-admin \
+            --username ${SUPERSET_ADMIN_USERNAME} \
+            --firstname ${SUPERSET_ADMIN_FIRSTNAME} \
+            --lastname ${SUPERSET_ADMIN_LASTNAME} \
+            --email ${SUPERSET_ADMIN_EMAIL} \
+            --password ${SUPERSET_ADMIN_PASSWORD} || true &&
+        superset init &&
+        /usr/bin/run-server.sh
+
+    volumes:
+      - superset_home:/app/superset_home
+    networks:
+      - dbt_net
+
+networks:
+  dbt_net:
+    external: true
+
+volumes:
+  superset_home:

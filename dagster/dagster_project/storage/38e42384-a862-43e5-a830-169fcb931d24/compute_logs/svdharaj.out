@@ -1,0 +1,12 @@
+
+=== STEP 1: Connecting to SFTP ===
+Connected to SFTP.
+
+CSV files found: ['2025_data_challenge_ae.csv']
+
+➡️ Evaluating 2025_data_challenge_ae.csv -> table: loadsmart.2025_data_challenge_ae
+SFTP mtime (UTC): 2025-12-05 23:32:19+00:00
+Table max ingestion_date (UTC): 2025-12-07 23:58:08.621751+00:00
+File is NOT newer than table → skipping.
+
+All files evaluated. Pipeline complete.

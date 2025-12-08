@@ -1,0 +1,34 @@
+FROM python:3.10-slim
+
+# Dependências do sistema
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar Dagster + DBT + dependências
+RUN pip install --no-cache-dir \
+    dagster \
+    dagit \
+    dagster-webserver \
+    dagster-postgres \
+    dagster-dbt \
+    dbt-core \
+    dbt-postgres \
+    dbt-extractor \
+    pandas \
+    paramiko \
+    psycopg2-binary \
+    sqlalchemy \
+    networkx \
+    tqdm \
+    pendulum \
+    pyyaml \
+    requests
+
+
+WORKDIR /opt/dagster/app
+ENV DAGSTER_HOME=/opt/dagster/app
+
+EXPOSE 3000

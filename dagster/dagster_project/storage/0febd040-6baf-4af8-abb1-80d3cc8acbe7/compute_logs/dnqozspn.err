@@ -1,0 +1,62 @@
+2025-12-08 02:16:36 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - 37 - LOGS_CAPTURED - Started capturing logs in process (pid: 37).
+2025-12-08 02:16:36 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - 37 - run_dbt_models - STEP_START - Started execution of step "run_dbt_models".
+2025-12-08 02:16:39 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Copying `/opt/dagster/app/dbt/target/partial_parse.msgpack` to `/opt/dagster/app/dbt/target/run_dbt_models-0febd04-e3a5bf8/partial_parse.msgpack` to take advantage of partial parsing.
+2025-12-08 02:16:39 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Running dbt command: `dbt run`.
+2025-12-08 02:16:40 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Running with dbt=1.10.15
+2025-12-08 02:16:40 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Registered adapter: postgres=1.9.1
+2025-12-08 02:16:40 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Unable to do partial parsing because profile has changed
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Found 11 models, 1 operation, 1 source, 577 macros
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Concurrency: 4 threads (target='dev')
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 1 of 1 START hook: dbt_project.on-run-start.0 .................................. [RUN]
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 1 of 1 OK hook: dbt_project.on-run-start.0 ..................................... [[32mOK[0m in 0.03s]
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 1 of 11 START sql incremental model loadsmart_dim.dim_carrier .................. [RUN]
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 2 of 11 START sql incremental model loadsmart_dim.dim_delivery_location ........ [RUN]
+2025-12-08 02:16:43 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 3 of 11 START sql incremental model loadsmart_dim.dim_pickup_location .......... [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 4 of 11 START sql incremental model loadsmart_dim.dim_shipper .................. [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 1 of 11 OK created sql incremental model loadsmart_dim.dim_carrier ............. [[32mINSERT 0 0[0m in 0.39s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 3 of 11 OK created sql incremental model loadsmart_dim.dim_pickup_location ..... [[32mINSERT 0 0[0m in 0.39s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 2 of 11 OK created sql incremental model loadsmart_dim.dim_delivery_location ... [[32mINSERT 0 0[0m in 0.39s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 4 of 11 OK created sql incremental model loadsmart_dim.dim_shipper ............. [[32mINSERT 0 0[0m in 0.40s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 5 of 11 START sql incremental model loadsmart_dim.dim_sourcing_channel ......... [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 6 of 11 START sql table model loadsmart_reports.loadsmart_id_lastmonth_report .. [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 7 of 11 START sql table model public.test_query ................................ [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 7 of 11 OK created sql table model public.test_query ........................... [[32mSELECT 20[0m in 0.16s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 6 of 11 OK created sql table model loadsmart_reports.loadsmart_id_lastmonth_report  [[32mSELECT 307[0m in 0.17s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 5 of 11 OK created sql incremental model loadsmart_dim.dim_sourcing_channel .... [[32mINSERT 0 0[0m in 0.17s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 8 of 11 START sql incremental model loadsmart_fact.fact_loadsmart_load ......... [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 8 of 11 OK created sql incremental model loadsmart_fact.fact_loadsmart_load .... [[32mINSERT 0 0[0m in 0.10s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 9 of 11 START sql table model loadsmart_anl.anl_carrier ........................ [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 10 of 11 START sql table model loadsmart_anl.anl_delivery_location ............. [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 11 of 11 START sql table model loadsmart_anl.anl_pickup_location ............... [RUN]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 9 of 11 OK created sql table model loadsmart_anl.anl_carrier ................... [[32mSELECT 4496[0m in 0.16s]
+2025-12-08 02:16:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 11 of 11 OK created sql table model loadsmart_anl.anl_pickup_location .......... [[32mSELECT 3584[0m in 0.16s]
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - 10 of 11 OK created sql table model loadsmart_anl.anl_delivery_location ........ [[32mSELECT 3660[0m in 0.16s]
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Finished running 6 incremental models, 1 project hook, 5 table models in 0 hours 0 minutes and 1.17 seconds (1.17s).
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - [32mCompleted successfully[0m
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Finished dbt command: `dbt run`.
+2025-12-08 02:16:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - run_dbt_models - Finished dbt command: `dbt run`.
+2025-12-08 02:16:45 +0000 - dagster - ERROR - pipeline_ingest_then_dbt - 0febd040-6baf-4af8-abb1-80d3cc8acbe7 - 37 - run_dbt_models - STEP_FAILURE - Execution of step "run_dbt_models" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "run_dbt_models"::
+
+AttributeError: 'DbtCliInvocation' object has no attribute 'return_code'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/ops/run_dbt.py", line 19, in run_dbt_models
+    if result.return_code != 0:
+

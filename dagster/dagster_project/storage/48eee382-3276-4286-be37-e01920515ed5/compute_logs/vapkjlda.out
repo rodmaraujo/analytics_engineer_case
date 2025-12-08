@@ -1,0 +1,19 @@
+
+=== STEP 1: Connecting to SFTP ===
+Connected to SFTP.
+
+CSV files found: ['2025_data_challenge_ae.csv']
+
+➡️ Evaluating 2025_data_challenge_ae.csv -> table: loadsmart.2025_data_challenge_ae
+SFTP mtime (UTC): 2025-12-05 23:32:19+00:00
+Table does not exist → will process file.
+Downloading /documents/2025_data_challenge_ae.csv to /tmp/2025_data_challenge_ae.csv ...
+Download complete.
+
+🛠 RECREATING TABLE loadsmart.2025_data_challenge_ae
+✔️ Table created WITH ingestion_date
+📥 Inserting 5361 rows into loadsmart.2025_data_challenge_ae...
+✔️ Data inserted successfully.
+🏁 Finished processing loadsmart.2025_data_challenge_ae
+
+All files evaluated. Pipeline complete.

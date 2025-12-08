@@ -1,0 +1,5 @@
+Running with dbt=1.10.15
+Registered adapter: postgres=1.9.1
+Unable to do partial parsing because profile has changed
+Found 11 models, 1 operation, 1 source, 577 macros
+Nothing to do. Try checking your model configs and model specification args

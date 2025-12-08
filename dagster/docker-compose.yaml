@@ -1,0 +1,82 @@
+version: "3.9"
+
+networks:
+  dbt_net:
+    external: true
+
+services:
+
+  # -----------------------
+  # Dagster webserver (Dagit)
+  # -----------------------
+  dagster_webserver:
+    build: .
+    container_name: dagster_webserver
+    command: ["dagster-webserver", "-h", "0.0.0.0", "-p", "3000"]
+    ports:
+      - "3000:3000"
+    environment:
+      DAGSTER_HOME: /opt/dagster/app
+    volumes:
+      - ./dagster_project:/opt/dagster/app
+    depends_on:
+      - dagster_daemon
+      - dagster_user_code
+    networks:
+      - dbt_net
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/healthz || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # -----------------------
+  # Dagster daemon (schedules, sensors)
+  # -----------------------
+  dagster_daemon:
+    build: .
+    container_name: dagster_daemon
+    command: ["dagster-daemon", "run"]
+    environment:
+      DAGSTER_HOME: /opt/dagster/app
+    volumes:
+      - ./dagster_project:/opt/dagster/app
+    depends_on:
+      - dagster_user_code
+    networks:
+      - dbt_net
+    restart: always
+    healthcheck:
+      test: ["CMD", "bash", "-lc", "pgrep -f dagster-daemon || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # -----------------------
+  # User code gRPC server (your repository)
+  # -----------------------
+  dagster_user_code:
+    build: .
+    container_name: dagster_user_code
+    command: ["dagster", "api", "grpc", "-h", "0.0.0.0", "-p", "4000", "-f", "repository.py"]
+    environment:
+      DAGSTER_HOME: /opt/dagster/app
+      # Optional: pass Postgres creds as envs if your scripts/resources read from env
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: dbt_database
+      POSTGRES_USER: dbt_user
+      POSTGRES_PASSWORD: dbt_password
+    volumes:
+      - ./dagster_project:/opt/dagster/app
+    ports:
+      - "4000:4000"
+    networks:
+      - dbt_net
+    restart: always
+    healthcheck:
+      test: ["CMD", "bash", "-lc", "python -c 'import grpc' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

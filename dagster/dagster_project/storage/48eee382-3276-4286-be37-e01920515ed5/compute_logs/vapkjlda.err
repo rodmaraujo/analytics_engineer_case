@@ -1,0 +1,8 @@
+2025-12-07 23:58:02 +0000 - dagster - DEBUG - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - 73 - LOGS_CAPTURED - Started capturing logs in process (pid: 73).
+2025-12-07 23:58:02 +0000 - dagster - DEBUG - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - 73 - execute_ingestion_script - STEP_START - Started execution of step "execute_ingestion_script".
+2025-12-07 23:58:02 +0000 - dagster - INFO - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - execute_ingestion_script - Running script: /opt/dagster/app/scripts/1_source_to_postgresql_with_ingestion_date.py
+2025-12-07 23:58:08 +0000 - dagster - INFO - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - execute_ingestion_script - Ingestion completed.
+2025-12-07 23:58:08 +0000 - dagster - DEBUG - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - 73 - execute_ingestion_script - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+2025-12-07 23:58:08 +0000 - dagster - DEBUG - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - execute_ingestion_script - Writing file at: /opt/dagster/app/storage/48eee382-3276-4286-be37-e01920515ed5/execute_ingestion_script/result using PickledObjectFilesystemIOManager...
+2025-12-07 23:58:08 +0000 - dagster - DEBUG - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - 73 - execute_ingestion_script - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+2025-12-07 23:58:08 +0000 - dagster - DEBUG - sftp_to_postgres_ingestion - 48eee382-3276-4286-be37-e01920515ed5 - 73 - execute_ingestion_script - STEP_SUCCESS - Finished execution of step "execute_ingestion_script" in 6.75s.

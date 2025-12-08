@@ -1,0 +1,32 @@
+2025-12-08 02:44:39 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - 336 - LOGS_CAPTURED - Started capturing logs in process (pid: 336).
+2025-12-08 02:44:39 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - 336 - export_reports_sftp - STEP_START - Started execution of step "export_reports_sftp".
+2025-12-08 02:44:39 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Loading file from: /opt/dagster/app/storage/a6cfcfc7-a621-4fce-9e44-ab668911d4db/run_dbt_models/result using PickledObjectFilesystemIOManager...
+2025-12-08 02:44:39 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - 336 - export_reports_sftp - LOADED_INPUT - Loaded input "upstream" using input manager "io_manager", from output "result" of step "run_dbt_models"
+2025-12-08 02:44:39 +0000 - dagster - DEBUG - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - 336 - export_reports_sftp - STEP_INPUT - Got input "upstream" of type "Any". (Type check passed).
+2025-12-08 02:44:39 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Starting report export process. Upstream message: DBT_DONE
+2025-12-08 02:44:39 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Connecting to SFTP server...
+2025-12-08 02:44:42 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Connected to SFTP.
+2025-12-08 02:44:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Exporting table: loadsmart_reports.loadsmart_id_lastmonth_report
+2025-12-08 02:44:44 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Uploading file to SFTP: loadsmart_id_lastmonth_report_20251208.csv
+2025-12-08 02:44:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Exporting table: loadsmart_anl.anl_carrier
+2025-12-08 02:44:45 +0000 - dagster - INFO - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - export_reports_sftp - Uploading file to SFTP: anl_carrier_20251208.csv
+2025-12-08 02:44:45 +0000 - dagster - ERROR - pipeline_ingest_then_dbt - a6cfcfc7-a621-4fce-9e44-ab668911d4db - 336 - export_reports_sftp - STEP_FAILURE - Execution of step "export_reports_sftp" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "export_reports_sftp"::
+
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/anl_carrier_20251208.csv'
+
+Stack Trace:
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 57, in op_execution_error_boundary
+    yield
+  File "/usr/local/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 394, in iterate_with_context
+    next_output = next(iterator)
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 135, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/usr/local/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 115, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/opt/dagster/app/ops/export_reports_sftp.py", line 85, in export_reports_sftp
+    sftp.put(local_tmp, remote_path)
+  File "/usr/local/lib/python3.10/site-packages/paramiko/sftp_client.py", line 757, in put
+    file_size = os.stat(localpath).st_size
+
