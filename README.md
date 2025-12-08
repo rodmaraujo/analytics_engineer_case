@@ -78,6 +78,9 @@ The Challenge: https://github.com/rodmaraujo/analytics_engineer_case/blob/main/D
 
 <img width="1485" height="215" alt="Image" src="https://github.com/user-attachments/assets/8ad5221b-2e0a-4da2-b1c5-1195ebd6f71f" />
 
+Fake E-mail export:
+
+<img width="1899" height="220" alt="Image" src="https://github.com/user-attachments/assets/a2a617fe-7aa8-4d42-a81a-7446429eccb8" />
 
 ----------------------------------------------------------------------
 
