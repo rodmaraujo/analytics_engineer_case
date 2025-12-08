@@ -21,7 +21,7 @@ The Challenge: https://github.com/rodmaraujo/analytics_engineer_case/blob/main/D
 <img width="572" height="379" alt="Image" src="https://github.com/user-attachments/assets/8b1526f5-24ea-420e-9e6f-edba4bf67980" />
 
 
-Full Arch I developed:
+### Full Arch I developed:
 <img width="2000" height="807" alt="Image" src="https://github.com/user-attachments/assets/4c1491e7-6202-42df-825e-ec33c5ad2342" />
 
 
