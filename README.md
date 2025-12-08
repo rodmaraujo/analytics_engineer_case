@@ -57,7 +57,11 @@ STEPS:
 <img width="1304" height="143" alt="Image" src="https://github.com/user-attachments/assets/1c2831d7-c95e-45c7-8d83-dfaf64e5410c" />
 
 
-[Raw Tabela validate on Postgresql] https://github.com/rodmaraujo/analytics_engineer_case/blob/main/python_isolated_case_functions/2_loadsmart_raw_table_validate.py
+[Raw Table validate on Postgresql] https://github.com/rodmaraujo/analytics_engineer_case/blob/main/python_isolated_case_functions/2_loadsmart_raw_table_validate.py
+
+
+
+
 
 
 ----TASK 2.a.ii, 2.a.iii, 2.b of PDF case----
