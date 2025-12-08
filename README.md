@@ -171,4 +171,4 @@ b) The Contract Schedule is Daily:7UTC
 
 ----------------
 
-Hey! I hope you enjoyed my Analytics Engineer case. I did it with the much care that I could. See ya! 
+Hey! I hope you enjoyed my Analytics Engineer case! See ya!
