@@ -180,7 +180,7 @@ My Superset dashboard testing the Data Models:
 
 All of the Raw Ingestion, Data Modeling and Export Pipeline could be Orchestrated with Dagster 
 
-(I have been worked with Airflow during my career, but I wanted to test Dagster in this challenge only for curiosity and I liked! I'll explore more about him.)
+(I have been worked with Airflow during my career, but I wanted to test Dagster in this challenge only for curiosity and I liked! I'll explore more about it.)
 
 <img width="393" height="2120" alt="Image" src="https://github.com/user-attachments/assets/6e77c711-f61f-446b-b857-9c079d687c03" />
 
