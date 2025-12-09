@@ -24,6 +24,8 @@ https://github.com/rodmaraujo/analytics_engineer_case/blob/main/DENB_Challenge_A
 
 
 ### Full Arch I developed:
+https://drive.google.com/file/d/1b3RnLjsYAh3MpCdpT1Skx3NfY29QP4tF/view?usp=sharing
+
 <img width="2000" height="807" alt="Image" src="https://github.com/user-attachments/assets/4c1491e7-6202-42df-825e-ec33c5ad2342" />
 
 
