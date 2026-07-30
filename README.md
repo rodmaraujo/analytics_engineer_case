@@ -182,7 +182,7 @@ All of the Raw Ingestion, Data Modeling and Export Pipeline could be Orchestrate
 
 (I have been worked with Airflow during my career, but I wanted to test Dagster in this challenge only for curiosity and I liked! I'll explore more about it.)
 
-<img width="393" height="2120" alt="Image" src="https://github.com/user-attachments/assets/6e77c711-f61f-446b-b857-9c079d687c03" />
+<img width="393" height="393" alt="Image" src="https://github.com/user-attachments/assets/6e77c711-f61f-446b-b857-9c079d687c03" />
 
 <img width="393" height="426" alt="Image" src="https://github.com/user-attachments/assets/5adafed6-7561-4b0d-ab51-abad2420a294" />
 <img width="784" height="37" alt="Image" src="https://github.com/user-attachments/assets/1a1e8666-a30c-41fe-b046-63738f195f7a" />
